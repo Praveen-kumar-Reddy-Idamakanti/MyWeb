@@ -10,7 +10,7 @@
 ScrollTrigger.create({
   trigger: ".recent-work",
   start: "top top",
-  end: "+=300%",
+  end: "+=400%",
   pin: true,
   scrub: true,
   markers: false,
@@ -26,7 +26,7 @@ ScrollTrigger.create({
         scrollTrigger:{
             trigger:".skills",
             start:"center center",
-            end:"+=70%",
+            end:"+=100%",
             scrub:2,
             markers:false,
             pin:true,
