@@ -8,7 +8,7 @@
 .full-container{
     background-color: #fffff0;
     width: 100%;
-    height: 500vh;
+    height: 1000vh;
 }
 
 .hero-page{
@@ -204,9 +204,17 @@
     padding-right: 5px;
 }
 .right-container{
+    
+    overflow: none;
+    position: absolute;
+    right: 0;
     height: 100vh;
     width: 50%;
-    background-color: grey;
+}
+.right-container img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 
