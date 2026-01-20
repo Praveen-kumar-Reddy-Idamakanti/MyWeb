@@ -1,0 +1,212 @@
+*{
+    box-sizing:border-box ;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.full-container{
+    background-color: #fffff0;
+    width: 100%;
+    height: 500vh;
+}
+
+.hero-page{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.praveen{
+    font-size: clamp(6rem,40vw,25rem);
+    font-weight: 700;
+    font-family: oswald;
+    color: #373737;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.upp-praveen{
+    position: absolute;
+    top: -21%;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    opacity: 0.9;
+}
+.lo-praveen{
+    position: absolute;
+    bottom: -21%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.nav{
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.nav ul{
+    list-style: none;
+    display: flex;
+    gap: 70px;
+    font-size: 1.2rem;
+    font-family: 'Poppins';
+    color: #373737;
+}
+
+.nav li{
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.nav li:hover{
+    color:rgb(0, 101, 0);
+}
+
+.nav ul li a{
+    text-decoration: none;
+    color: #373737;
+}
+
+.nav ul li a:hover{
+    color: rgb(0, 101,0);
+}
+
+.hero-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 5;
+    margin-top: 20px;
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-text{
+    font-size: clamp(3rem, 15vw, 7rem);
+    font-weight: 700;
+    font-family: oswald;
+    color: #373737;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+.hyphen{
+    color: rgb(0, 101, 0);
+}
+.des-text{
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #373737;
+    font-family: poppins, Roboto, sans-serif;
+    font-weight: 400;
+    max-width: 700px;
+}
+
+.about{
+    padding: 80px 52px;
+    margin-top: 350px;
+    height: 150vh;
+}
+
+.skills{
+    font-size: clamp(1.2rem, 4vw, 20rem);
+    font-weight: 600;
+    color: #373737;
+    font-family: "Poppins";
+    line-height: 1.5;
+    transition: opacity 0.3s ease;
+}
+
+.skill{
+    cursor: pointer;
+    transition: font-weight 0.3s ease, opacity 0.3s ease;
+}
+
+.hi{
+    font-size: clamp(1.2rem, 4.2vw, 20rem);
+    color:rgb(0, 101, 0);;
+}
+.skill span{
+    color: #373737;
+}
+
+.skills:has(.skill:hover) .skill:not(:hover){
+    opacity: 0.3;
+}
+
+.skill:hover{
+    opacity: 1;
+}
+
+.hi:hover{
+    color:#373737;
+}
+
+.recent-work{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 100vh;
+    margin-top: 45vh;
+}
+
+
+.left-container{
+    height: 100vh;
+    width: 50%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.left-container h1{
+    font-family: poppins;
+    font-size: clamp(1.2rem, 8.2vw, 20rem);
+    line-height: 0.9;
+    margin-top: 3rem;
+    color: #373737;
+}
+.left-container .time-line{
+    position: relative;
+    bottom: -42%;
+}
+
+.left-container .project{
+    display: flex;
+    justify-content: space-between;
+    font-family: poppins;
+    font-weight: 600;
+}
+.left-container .project .project-details{
+    display: flex;
+}
+
+.left-container .project .project-details .project-no{
+    color: rgb(0, 101, 0);
+    padding-right: 5px;
+}
+.right-container{
+    height: 100vh;
+    width: 50%;
+    background-color: grey;
+}
+
+
