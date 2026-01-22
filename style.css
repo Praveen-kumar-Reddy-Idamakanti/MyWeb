@@ -4,7 +4,6 @@
     padding: 0;
     scroll-behavior: smooth;
     overscroll-behavior: none;
-    background-color: #fffff0;
 }
 
 .full-container{
@@ -224,7 +223,7 @@
 .work{
     display: grid;
     grid-template-columns: 1.5fr 1.3fr;
-    gap: clamp(1.5rem,6vw, 9rem);
+    gap: clamp(1.5rem,8vw, 9rem);
     padding: 0 50px 0 50px;
     height: 120vh;
     font-family: "Poppins";
@@ -234,7 +233,7 @@
 .work .left{
     display: flex;
     flex-direction: row;
-    gap: clamp(1.5rem,1vw, 4rem);
+    gap: clamp(1.5rem,3vw, 4rem);
     position: relative;
     top: 24%;
 }
@@ -260,6 +259,7 @@
     position: relative;
     top: -1%;
     margin-right: 10%;
+    color: rgb(0, 101, 0);
     /* visibility:hidden; */
 }
 
@@ -281,11 +281,14 @@
 
 .work .left .details .names .name{
     display: flex;    
+    color: rgb(0, 101, 0);
+    font-weight: 700;
 }
 
 .work .left .details .names .name .arrow{
     position: absolute;
     right: 0;
+    color: rgb(0, 101, 0);
 }
 
 
@@ -297,15 +300,17 @@
 .video-section{
     position: relative;
     top: 10%;
+    
 }
 .video-section .title{
     font-size: clamp(1.2rem, 8.2vw, 20rem);
     font-weight: 700;
-    padding-left: 15%;
+    text-align: center;
+    color: #373737;
 }
 .videos {
   width: 100%;
-  max-width: clamp(300px, 45vw, 600px);
+  max-width: clamp(300px, 40vw,600px);
   aspect-ratio: 16 / 9;
   background: #d9d9d9;
   border-radius: 12px;
