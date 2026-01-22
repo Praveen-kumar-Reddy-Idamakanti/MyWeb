@@ -3,17 +3,20 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    overscroll-behavior: none;
+    background-color: #fffff0;
 }
 
 .full-container{
     background-color: #fffff0;
     width: 100%;
-    height: 1000vh;
+    height: 1900vh;
+    position: sticky;
 }
 
 .hero-page{
     position: relative;
-    height: 100vh;
+    height:100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,6 +128,7 @@
     padding: 80px 52px;
     margin-top: 350px;
     height: 150vh;
+    margin-bottom: 45vh;
 }
 
 .skills{
@@ -165,8 +169,9 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    height: 100vh;
-    margin-top: 45vh;
+    height: (100vh-1px);
+    top: -1px !important;
+    margin-bottom: 200px;
 }
 
 
@@ -216,5 +221,137 @@
     height: 100%;
     width: 100%;
 }
+.work{
+    display: grid;
+    grid-template-columns: 1.5fr 1.3fr;
+    gap: clamp(1.5rem,6vw, 9rem);
+    padding: 0 50px 0 50px;
+    height: 120vh;
+    font-family: "Poppins";
+    overflow: hidden;
+    margin-bottom: 200px;
+}
+.work .left{
+    display: flex;
+    flex-direction: row;
+    gap: clamp(1.5rem,1vw, 4rem);
+    position: relative;
+    top: 24%;
+}
+.work-picture{
+    width:100%;
+    height: 20vh;
+    max-width: clamp(160px,26vw, 360px);
+    aspect-ratio: 4/3;
+    border-radius: 2px;
+    background-color: #373737;
+    margin-bottom: 28px;
+}
+
+.work2{
+    background-color: #9e9e00;
+}
+
+.work .left .number{
+    font-size:clamp(1.2rem, 4vw, 20rem) ;
+    font-weight: 600;
+    padding-right: 40px;
+    color: #373737;
+    position: relative;
+    top: -1%;
+    margin-right: 10%;
+    /* visibility:hidden; */
+}
+
+.work .left .number .work-no{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+} 
+.work .pictures{
+    padding-right: 40px;
+    margin-bottom: 200px;
+}
 
 
+.work .left  .details .names{
+    margin-bottom: 122%;   
+}
+
+.work .left .details .names .name{
+    display: flex;    
+}
+
+.work .left .details .names .name .arrow{
+    position: absolute;
+    right: 0;
+}
+
+
+.work .left .details .descriptions .description{
+    position: absolute;
+    visibility: hidden;
+}
+
+.video-section{
+    position: relative;
+    top: 10%;
+}
+.video-section .title{
+    font-size: clamp(1.2rem, 8.2vw, 20rem);
+    font-weight: 700;
+    padding-left: 15%;
+}
+.videos {
+  width: 100%;
+  max-width: clamp(300px, 45vw, 600px);
+  aspect-ratio: 16 / 9;
+  background: #d9d9d9;
+  border-radius: 12px;
+}
+
+.contact{
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+.contact .footer-content{
+    display: flex;
+}
+.contact .footer-content .contact-des{
+    background-color: black;
+    color: #fffff0;
+    font-size:clamp(3rem,2vw,20rem);
+    font-family: poppins;
+    font-weight: 700;
+    padding:8% 30% 0 50px ;
+}
+
+.contact .footer-content .links{
+    background-color: black;
+    color: #fffff0;
+    font-size:clamp(2.2rem,2vw,20rem);
+    font-family: poppins;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.contact .links{
+    background-color: black;
+    color: #fffff0;
+}
+
+.contact .footer-praveen{
+    background-color: black;
+    color: #fffff0;
+    /* transform: rotate(180deg); */
+    position: relative;
+    bottom: -8%;
+    white-space: 0;
+    display: flex;
+    justify-content: center;
+    font-size: clamp(6rem,40vw,25rem);
+}
