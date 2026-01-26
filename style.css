@@ -22,6 +22,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .praveen{
@@ -371,6 +372,7 @@ body{
 
 
 @media (max-width:480px) {
+
     .praveen{
         font-size: clamp(6rem,58vw,25rem);
     }
