@@ -371,27 +371,33 @@ body{
 }
 
 
-@media (max-width:480px) {
 
-    .praveen{
-        font-size: clamp(6rem,58vw,25rem);
-    }
-    .upp-praveen{
+@media (max-width: 480px) {
+  .praveen {
+    font-size: clamp(6rem, 58vw, 25rem);
+  }
+
+  .upp-praveen {
     position: absolute;
-    top: 37%;
-    left: -45%;
-    transform:  rotate(90deg) !important;
-}
-.lo-praveen{
-    top: -20% !important;
-    left: 169% !important;
-    transform: rotate(270deg) !important;
-}
+    top: 50%;
+    right: 50% ;
+    transform: translate(0%, -50%) rotate(90deg) !important;
+    opacity: 0.9;
+  }
 
-.des-text{
-    padding: 0 9px 0 9px;
-}
-.nav{
-    visibility: hidden;
-}
+  .lo-praveen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(270deg) !important;
+    opacity: 0.9;
+  }
+
+  .des-text {
+    padding: 0 9px;
+  }
+
+  .nav {
+    display: none;
+  }
 }
