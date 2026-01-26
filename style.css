@@ -5,6 +5,10 @@
     scroll-behavior: smooth;
 }
 
+body{
+    background-color: #fffff0;
+}
+
 .full-container{
     background-color: #fffff0;
     width: 100%;
@@ -378,7 +382,7 @@
 }
 .lo-praveen{
     top: -20% !important;
-    left: 168% !important;
+    left: 169% !important;
     transform: rotate(270deg) !important;
 }
 
