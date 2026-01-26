@@ -1,7 +1,8 @@
 
  // use a script tag or an external JS file
  document.addEventListener("DOMContentLoaded", (event) => {
-    gsap.registerPlugin(ScrollTrigger,ScrollSmoother)
+     const isMobile = window.innerWidth <= 768 || "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    gsap.registerPlugin(ScrollTrigger)
     projects=document.querySelectorAll(".project")
     images=document.querySelectorAll(".project-image")
     const totalProjects = projects.length;
@@ -12,9 +13,9 @@
         start: "top top",
         end: "+=400%",
         pin: true,
+        anticipatePin: 1,
         scrub: true,
         markers: false,
-        pinType:"fixed",
         onUpdate: self => {
             const progress = gsap.utils.clamp(0, 0.999, self.progress);
             const index = Math.floor(progress * projects.length);
@@ -38,6 +39,7 @@
             scrub:0.5,
             markers:false,
             pin:true,
+            anticipatePin: 1,
             onUpdate: self=>{
                 const progress =gsap.utils.clamp(0,0.999, self.progress);
                 const index=Math.floor(progress*pictures.length);
@@ -55,8 +57,8 @@
     scrollTrigger: {
         trigger: ".work",
         start: "top top",
-        end: "+=400%",
-        scrub: 1
+        end: "+=500%",
+        scrub: 2
     }
     });
     gsap.to(".skills",{
@@ -67,6 +69,7 @@
             scrub:1,
             markers:false,
             pin:true,
+            anticipatePin: 1,
         },
     });
     let t1=gsap.timeline();
@@ -143,5 +146,9 @@
 
     }
     ScrollTrigger.refresh();
+    setTimeout(() => ScrollTrigger.refresh(), 500);
  });
+
+
+
 

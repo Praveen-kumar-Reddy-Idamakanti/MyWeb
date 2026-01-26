@@ -3,14 +3,12 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    overscroll-behavior: none;
 }
 
 .full-container{
     background-color: #fffff0;
     width: 100%;
     height: 1900vh;
-    position: sticky;
 }
 
 .hero-page{
@@ -127,11 +125,11 @@
     padding: 80px 52px;
     margin-top: 350px;
     height: 150vh;
-    margin-bottom: 45vh;
+    margin-bottom: 50vh;
 }
 
 .skills{
-    font-size: clamp(1.2rem, 4vw, 20rem);
+    font-size: clamp(2.4rem, 4vw, 20rem);
     font-weight: 600;
     color: #373737;
     font-family: "Poppins";
@@ -145,7 +143,7 @@
 }
 
 .hi{
-    font-size: clamp(1.2rem, 4.2vw, 20rem);
+    font-size: clamp(2.4rem, 4.2vw, 20rem);
     color:rgb(0, 101, 0);;
 }
 .skill span{
@@ -168,7 +166,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    height: (100vh-1px);
+    height: calc(100vh-1px);
     top: -1px !important;
     margin-bottom: 200px;
 }
@@ -208,8 +206,6 @@
     padding-right: 5px;
 }
 .right-container{
-    
-    overflow: none;
     position: absolute;
     right: 0;
     height: 100vh;
@@ -281,7 +277,6 @@
 
 .work .left .details .names .name{
     display: flex;    
-    color: rgb(0, 101, 0);
     font-weight: 700;
 }
 
@@ -349,6 +344,15 @@
     color: #fffff0;
 }
 
+.contact .links .link:hover{
+    cursor: pointer;
+    background-color: #fffff0;
+    font-style: italic;
+    transition: opacity 0.2 ease-in;
+    text-decoration: underline;
+    
+}
+
 .contact .footer-praveen{
     background-color: black;
     color: #fffff0;
@@ -359,4 +363,29 @@
     display: flex;
     justify-content: center;
     font-size: clamp(6rem,40vw,25rem);
+}
+
+
+@media (max-width:480px) {
+    .praveen{
+        font-size: clamp(6rem,58vw,25rem);
+    }
+    .upp-praveen{
+    position: absolute;
+    top: 37%;
+    left: -45%;
+    transform:  rotate(90deg) !important;
+}
+.lo-praveen{
+    top: -20% !important;
+    left: 168% !important;
+    transform: rotate(270deg) !important;
+}
+
+.des-text{
+    padding: 0 9px 0 9px;
+}
+.nav{
+    visibility: hidden;
+}
 }
