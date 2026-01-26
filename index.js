@@ -1,11 +1,49 @@
-
- // use a script tag or an external JS file
+ import Lenis from "https://unpkg.com/@studio-freight/lenis@1/dist/lenis.mjs";
  document.addEventListener("DOMContentLoaded", (event) => {
      const isMobile = window.innerWidth <= 768 || "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
     gsap.registerPlugin(ScrollTrigger)
-    projects=document.querySelectorAll(".project")
-    images=document.querySelectorAll(".project-image")
-    const totalProjects = projects.length;
+
+    let lenis=null;
+    
+    if(!isMobile){
+        lenis=new Lenis({
+            smooth:true,
+            lerp:0.08
+        });
+        lenis.on("scroll",ScrollTrigger.update);
+
+        gsap.ticker.add((time)=>{
+            lenis.raf(time*1000);
+        });
+
+        gsap.ticker.lagSmoothing(0);
+    }
+
+    if (!isMobile && lenis) {
+        ScrollTrigger.scrollerProxy(document.body, {
+        scrollTop(value) {
+            if (arguments.length) {
+            lenis.scrollTo(value, { immediate: true });
+            }
+            return lenis.scroll;
+        },
+        getBoundingClientRect() {
+            return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight
+            };
+        }
+        });
+
+    }
+
+    //Recent work Section
+
+    const projects=document.querySelectorAll(".project")
+    const images=document.querySelectorAll(".project-image")
 
     showProject(0);
     ScrollTrigger.create({
@@ -23,10 +61,11 @@
         }
     });
 
-    pictures=document.querySelectorAll(".work0");
-    names=document.querySelectorAll(".name");
-    description=document.querySelectorAll(".description");
-    video=document.querySelectorAll(".video");
+    //Work Section
+    const pictures=document.querySelectorAll(".work0");
+    const names=document.querySelectorAll(".name");
+    const description=document.querySelectorAll(".description");
+    const video=document.querySelectorAll(".video");
 
     showWork(0);
     gsap.to(".pictures",{
@@ -51,6 +90,8 @@
             }
         },
     })
+
+
     gsap.to(".work-no", {
     opacity: 1,
     stagger: 1,
@@ -61,6 +102,8 @@
         scrub: 2
     }
     });
+
+    //Skills section
     gsap.to(".skills",{
         scrollTrigger:{
             trigger:".skills",
@@ -72,31 +115,19 @@
             anticipatePin: 1,
         },
     });
+
+    //HERO timeline
     let t1=gsap.timeline();
     t1
     .from(".hero",{
-        duration: 1.5
-    })
-    .from(".upp-praveen",{
-        y: -360,
-        opacity:0.5,
-        duration: 1.2
-    },"-=1.5")
-    .from(".lo-praveen",{
-        y: 360,
-        opacity:0.5,
-        duration: 1.2
-    },"-=1.5")
-    .from(".des-text",{
-        opacity:0,
-        y:20,
-        duration: 0.8
-    })
-    .from(".nav",{
-        opacity:0,
-        y:-20,
-        duration: 0.5
-    })
+        duration: 1.5})
+    .from(".upp-praveen",{y: -360,opacity:0.5,duration: 1.2},"-=1.5")
+    .from(".lo-praveen",{y: 360,opacity:0.5,duration: 1.2},"-=1.5")
+    .from(".des-text",{opacity:0, y:20,duration: 0.8})
+    .from(".nav",{opacity:0,y:-20,duration: 0.5})
+
+
+
     function showProject(i){
         projects.forEach((project,index)=>{
             if (i===index){
@@ -145,8 +176,11 @@
         })
 
     }
-    ScrollTrigger.refresh();
-    setTimeout(() => ScrollTrigger.refresh(), 500);
+
+    window.addEventListener("load", () => {
+  ScrollTrigger.refresh();
+});
+
  });
 
 
